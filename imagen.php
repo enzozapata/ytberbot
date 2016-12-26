@@ -1,6 +1,6 @@
 <?php
   //Set the Content Type
-  header('Content-type: image/jpeg');
+  //header('Content-type: image/jpeg');
 
   // Create Image From Existing File
   $jpg_image = imagecreatefromjpeg($_POST['url_imagen']);
@@ -17,14 +17,13 @@
   $text = $_POST['texto'];
 
   // Print Text On Image
-  if(imagettftext($jpg_image, 32, 0, 75, 300, $white, $font_path, $text)){
+  imagettftext($jpg_image, 32, 0, 75, 75, $white, $font_path, $text));
+  imagettftext($jpg_image, 32, 0, 700, 500, $white, $font_path, 'www.AnimeXMega.net'));
 
   // Send Image to Browser
-  imagejpeg($jpg_image);
+  imagejpeg($jpg_image, 'img.jpg');
 
   // Clear Memory
   imagedestroy($jpg_image);
-  } else {
-	  echo "Error al imagettftext.";
-  }
+
 ?>
