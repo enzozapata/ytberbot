@@ -17,8 +17,8 @@
   $text = $_POST['texto'];
 
   // Print Text On Image
-  imagettftext($jpg_image, 32, 0, 75, 75, $white, $font_path, $text));
-  imagettftext($jpg_image, 32, 0, 700, 500, $white, $font_path, 'www.AnimeXMega.net'));
+  imagettftext($jpg_image, 32, 0, 75, 75, $white, $font_path, $text);
+  imagettftext($jpg_image, 32, 0, 700, 500, $white, $font_path, 'www.AnimeXMega.net');
 
   // Send Image to Browser
   imagejpeg($jpg_image, 'img.jpg');
