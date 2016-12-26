@@ -10,5 +10,13 @@
 <label for="texto">Texto:</label><input type="text" name="texto">
 <input type="submit" value="Subir">
 </form>
+<?php
+if (extension_loaded('gd') && function_exists('gd_info')) {
+    echo "PHP GD library is installed on your web server";
+}
+else {
+    echo "PHP GD library is NOT installed on your web server";
+}
+?>
 </body>
 </html>
