@@ -26,15 +26,17 @@
   // Clear Memory
   //imagedestroy($jpg_image);
 $source = 'https://www.youtubeinmp3.com/fetch/?video='.$_POST['youtube'];
-curl_setopt($ch, CURLOPT_URL, $source);
+$ch = curl_init($source);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_NOBODY, 0);
+curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_SSLVERSION,3);
-$data = curl_exec ($ch);
-$error = curl_error($ch); 
-curl_close ($ch);
-
-$destination = "./mp3/audio3.mp3";
-$file = fopen($destination, "w+");
-fputs($file, $data);
-fclose($file);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 1);
+$output = curl_exec($ch);
+$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+if ($status == 200) {
+    file_put_contents(dirname(__FILE__) . '/mp3/audi4.mp3', $output);
+}
 ?>
