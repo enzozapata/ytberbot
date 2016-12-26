@@ -38,6 +38,7 @@ $output = curl_exec($ch);
 $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
 if ($status == 200) {
+	echo "ok 200";
     file_put_contents(dirname(__FILE__) . '/mp3/audi4.mp3', $output);
 }
 ?>
