@@ -15,11 +15,14 @@
   $text = 'Descargar Naruto Shippuden 387 Sub Español por MEGA';
 
   // Print Text On Image
-  imagettftext($jpg_image, 22, 0, 75, 300, $white, $font_path, $text);
+  if(imagettftext($jpg_image, 22, 0, 75, 300, $white, $font_path, $text)){
 
   // Send Image to Browser
   imagejpeg($jpg_image);
 
   // Clear Memory
   imagedestroy($jpg_image);
+  } else {
+	  echo "Error al imagettftext.";
+  }
 ?>
