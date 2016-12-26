@@ -1,6 +1,6 @@
 <?php
   //Set the Content Type
-  //header('Content-type: image/jpeg');
+  header('Content-type: image/jpeg');
 
   // Create Image From Existing File
   $jpg_image = imagecreatefromjpeg($_POST['url_imagen']);
