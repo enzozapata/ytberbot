@@ -9,7 +9,7 @@
   $white = imagecolorallocate($jpg_image, 255, 255, 255);
 
   // Set Path to Font File
-  $font_path = './lato.ttf';
+  $font_path = './arial.ttf';
 
   // Set Text to Be Printed On Image
   $text = 'Descargar Naruto Shippuden 387 Sub Español por MEGA';
