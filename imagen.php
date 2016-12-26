@@ -21,7 +21,7 @@
   imagettftext($jpg_image, 32, 0, 700, 500, $white, $font_path, 'www.AnimeXMega.net');
 
   // Send Image to Browser
-  imagejpeg($jpg_image);
+  imagejpeg($jpg_image, 'img');
 
   // Clear Memory
   imagedestroy($jpg_image);
