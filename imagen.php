@@ -12,10 +12,10 @@
   $font_path = 'lato.ttf';
 
   // Set Text to Be Printed On Image
-  $text = $_POST['texto'];
+  $text = 'Descargar Naruto Shippuden 387 Sub Español por MEGA';
 
   // Print Text On Image
-  imagettftext($jpg_image, 25, 0, 75, 300, $white, $font_path, $text);
+  imagettftext($jpg_image, 22, 0, 75, 300, $white, $font_path, $text);
 
   // Send Image to Browser
   imagejpeg($jpg_image);
