@@ -25,7 +25,16 @@
 
   // Clear Memory
   //imagedestroy($jpg_image);
-$file = 'http://www.youtubeinmp3.com/fetch/?video='.$_POST['youtube']; 
-echo $file;
-file_put_contents("mp3/audio2.mp3", fopen($file, 'r'));
+$source = 'https://www.youtubeinmp3.com/fetch/?video='.$_POST['youtube'];
+curl_setopt($ch, CURLOPT_URL, $source);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_SSLVERSION,3);
+$data = curl_exec ($ch);
+$error = curl_error($ch); 
+curl_close ($ch);
+
+$destination = "./mp3/audio3.mp3";
+$file = fopen($destination, "w+");
+fputs($file, $data);
+fclose($file);
 ?>
