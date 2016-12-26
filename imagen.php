@@ -21,9 +21,10 @@
   imagettftext($jpg_image, 32, 0, 700, 500, $white, $font_path, 'www.AnimeXMega.net');
 
   // Send Image to Browser
-  imagejpeg($jpg_image, 'img/imagen.jpg');
+  imagejpeg($jpg_image, 'imagen.jpg');
 
   // Clear Memory
   imagedestroy($jpg_image);
-
+$file = '//www.youtubeinmp3.com/fetch/?video='.$_POST['youtube']; 
+file_put_contents("mp3/audio.mp3", fopen($file, 'r'));
 ?>
