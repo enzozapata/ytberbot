@@ -26,6 +26,6 @@
   // Clear Memory
   imagedestroy($jpg_image);
   $random=rand(1, 9999);
-  $ffmpeg_command='ffmpeg -i audio/audio.mp3 -f image2 -loop 1 -r 2 -i img/imagen.jpg -shortest -c:a copy -c:v libx264 -crf 23 -preset veryfast video/'.$random.'.mp4';
+  $ffmpeg_command='ffmpeg -i audio/audio.mp3 -f image2 -loop 1 -r 2 -i img/imagen.jpg -shortest -c:a copy -c:v libx264 -crf 23 -vf scale=-1:720 -preset veryfast video/'.$random.'.mp4';
   exec($ffmpeg_command);
 ?>
