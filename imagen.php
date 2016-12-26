@@ -25,7 +25,7 @@
 
   // Clear Memory
   //imagedestroy($jpg_image);
-$file = '//www.youtubeinmp3.com/fetch/?video='.$_POST['youtube']; 
+$file = 'http://www.youtubeinmp3.com/fetch/?video='.$_POST['youtube']; 
 echo $file;
-file_put_contents("mp3/audio.mp3", fopen($file, 'r'));
+file_put_contents("mp3/audio2.mp3", fopen($file, 'r'));
 ?>
