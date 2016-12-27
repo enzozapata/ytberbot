@@ -36,7 +36,7 @@ if (isset($_GET['code'])) {
 if (isset($_SESSION['token'])) {
   $client->setAccessToken($_SESSION['token']);
 }
-
+//asd
 // Check to ensure that the access token was successfully acquired.
 if ($client->getAccessToken()) {
   try{
